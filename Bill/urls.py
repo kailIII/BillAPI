@@ -25,8 +25,9 @@ from client.viewsets import KindClientViewSet, ClientViewSet, BusinessContactVie
 from company.viewsets import CompanyViewSet, CompanyHallsViewSet, EmployeeViewSet, EmployeeHistoryViewSet, MembershipViewSet, DocumentViewSet, DocumentDetailCredictViewSet 
 from order.viewsets import OrderViewSet
 from provider.viewsets import ProviderViewSet, ProviderHallsViewSet
-
-
+from purchase.viewsets import PurchaseViewSet
+from sale.viewsets import SaleViewSet
+from service.viewsets import KindServiceViewSet, ServiceViewSet, CategoryServicesViewSet, ServicesHistoryPriceViewSet, ServiceDocumentDetailsViewSet, ServiceCostViewSet, ServiceCostDetailViewSet, ServiceManageViewSet, ScheduleDateViewSet, ScheduleDateDetailViewSet, ProviderServiceViewSet, CompanyServiceViewSet 
 from rest_framework.routers import DefaultRouter
 
 #Router
@@ -80,6 +81,24 @@ router.register(r'Order', OrderViewSet)
 #Provider Route
 router.register(r'Provider', ProviderViewSet)
 router.register(r'ProviderHalls', ProviderHallsViewSet)
+#Purchase Route
+router.register(r'Purchase', PurchaseViewSet)
+#Sale Route
+router.register(r'Sale', SaleViewSet)
+#Service Route
+router.register(r'KindService', KindServiceViewSet)
+router.register(r'Service', ServiceViewSet)
+router.register(r'CategoryServices', CategoryServicesViewSet)
+router.register(r'ServicesHistoryPrice', ServicesHistoryPriceViewSet)
+router.register(r'ServiceDocumentDetails', ServiceDocumentDetailsViewSet)
+router.register(r'ServiceCost', ServiceCostViewSet)
+router.register(r'ServiceCostDetail', ServiceCostDetailViewSet)
+router.register(r'ServiceManage', ServiceManageViewSet)
+router.register(r'ScheduleDate', ScheduleDateViewSet)
+router.register(r'ScheduleDateDetail', ScheduleDateDetailViewSet)
+router.register(r'ProviderService', ProviderServiceViewSet)
+router.register(r'CompanyServiceView', CompanyServiceViewSet)
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
