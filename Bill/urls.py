@@ -20,6 +20,13 @@ admin.autodiscover()
 
 from main.viewsets import CountryViewSet, CityViewSet, BDPViewSet, MailViewSet, AddressViewSet, PhoneViewSet, WebsiteViewSet, HallViewSet, AreaViewSet, AppointmentViewSet, CategorySPViewSet, CoinViewSet, CoinHistoryViewSet
 from article.viewsets import BrandViewSet, ModelViewSet, ArticleViewSet, BatchViewSet, PresentationViewSet, ArticlePresentationViewSet, CategoryArticleViewSet, ArticleHistoryPriceViewSet, ArticleInventoryViewSet, CompanyArticleViewSet, ProviderArticleViewSet, ArticleDocumentDetailViewSet
+from bank.viewsets import BankViewSet, BankControlViewSet, BankControlDetailViewSet, BankControlAdjustViewSet
+from client.viewsets import KindClientViewSet, ClientViewSet, BusinessContactViewSet 
+from company.viewsets import CompanyViewSet, CompanyHallsViewSet, EmployeeViewSet, EmployeeHistoryViewSet, MembershipViewSet, DocumentViewSet, DocumentDetailCredictViewSet 
+from order.viewsets import OrderViewSet
+from provider.viewsets import ProviderViewSet, ProviderHallsViewSet
+
+
 from rest_framework.routers import DefaultRouter
 
 #Router
@@ -51,6 +58,28 @@ router.register(r'ArticleInventory', ArticleInventoryViewSet)
 router.register(r'CompanyArticle', CompanyArticleViewSet)
 router.register(r'ProviderArticle', ProviderArticleViewSet)
 router.register(r'ArticleDocumentDetail', ArticleDocumentDetailViewSet)
+#Bank Route
+router.register(r'Bank', BankViewSet)
+router.register(r'BankControl', BankControlViewSet)
+router.register(r'BankControlDetail', BankControlDetailViewSet)
+router.register(r'BankControlAdjust', BankControlAdjustViewSet)
+#Client Route
+router.register(r'KindClient', KindClientViewSet)
+router.register(r'Client', ClientViewSet)
+router.register(r'BusinessContact', BusinessContactViewSet)
+#Company Route
+router.register(r'Company', CompanyViewSet)
+router.register(r'CompanyHalls', CompanyHallsViewSet)
+router.register(r'Employee', EmployeeViewSet)
+router.register(r'EmployeeHistory', EmployeeHistoryViewSet)
+router.register(r'Membership', MembershipViewSet)
+router.register(r'Document', DocumentViewSet)
+router.register(r'DocumentDetailCredict', DocumentDetailCredictViewSet)
+#Order Route
+router.register(r'Order', OrderViewSet)
+#Provider Route
+router.register(r'Provider', ProviderViewSet)
+router.register(r'ProviderHalls', ProviderHallsViewSet)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
