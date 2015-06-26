@@ -111,7 +111,7 @@ class catHalls(models.Model):
     idCity  = models.ForeignKey(catCity)
     name = models.CharField(max_length = 50,  null = False, blank = False)
     address = models.CharField(max_length = 255,  null = False, blank = False)
-    quantity = models.PositiveIntegerField(null = True, blank = True),
+    quantity = models.PositiveIntegerField(null = True, blank = True)
     beginHour = models.TimeField(null = True, blank = True)
     endHour = models.TimeField(null = True, blank = True)
     S_LIST = ((1,'Libre'),(2,'Ocupado'),(3,'Mantenimiento'),(4,'Otro'))
