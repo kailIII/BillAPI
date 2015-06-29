@@ -17,7 +17,7 @@ class CompanyHallsSerializer(serializers.ModelSerializer):
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model =  catEmployee
-        fields =('idEmployee','note','create','update') 
+        fields =('idEmployee','photo', 'idCard', 'postal', 'name', 'surname', 'birthdate','note','create','update') 
         
 class EmployeeHistorySerializer(serializers.ModelSerializer):
     class Meta:

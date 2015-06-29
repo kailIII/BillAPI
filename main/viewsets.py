@@ -1,9 +1,16 @@
 # viewsets.py
+
+#---------------------------
+from django.contrib.auth.models import User
 from .models import catCity, catCountry, tblBDP, catMail, catPhone, catAddress, catWebsite, catHalls, catArea, catAppointment, catCategorySP, catCoin, tblCoinHistory
-from .serializers import CountrySerializer, CitySerializer, BDPSerializer, MailSerializer, AddressSerializer, PhoneSerializer, WebsiteSerializer, HallSerializer, AreaSerializer, AppointmentSerializer, CategorySPSerializer, CoinSerializer, CoinHistorySerializer
+from .serializers import UserSerializer, CountrySerializer, CitySerializer, BDPSerializer, MailSerializer, AddressSerializer, PhoneSerializer, WebsiteSerializer, HallSerializer, AreaSerializer, AppointmentSerializer, CategorySPSerializer, CoinSerializer, CoinHistorySerializer
 from rest_framework import viewsets
  
  #class
+class UserViewSet(viewsets.ModelViewSet):
+    
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
  
 class CountryViewSet(viewsets.ModelViewSet):
     

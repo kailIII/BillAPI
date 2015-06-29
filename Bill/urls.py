@@ -13,12 +13,16 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+
 from django.conf.urls import include, url
 from django.contrib import admin
 
+
+
+
 admin.autodiscover()
 
-from main.viewsets import CountryViewSet, CityViewSet, BDPViewSet, MailViewSet, AddressViewSet, PhoneViewSet, WebsiteViewSet, HallViewSet, AreaViewSet, AppointmentViewSet, CategorySPViewSet, CoinViewSet, CoinHistoryViewSet
+from main.viewsets import UserViewSet, CountryViewSet, CityViewSet, BDPViewSet, MailViewSet, AddressViewSet, PhoneViewSet, WebsiteViewSet, HallViewSet, AreaViewSet, AppointmentViewSet, CategorySPViewSet, CoinViewSet, CoinHistoryViewSet
 from article.viewsets import BrandViewSet, ModelViewSet, ArticleViewSet, BatchViewSet, PresentationViewSet, ArticlePresentationViewSet, CategoryArticleViewSet, ArticleHistoryPriceViewSet, ArticleInventoryViewSet, CompanyArticleViewSet, ProviderArticleViewSet, ArticleDocumentDetailViewSet
 from bank.viewsets import BankViewSet, BankControlViewSet, BankControlDetailViewSet, BankControlAdjustViewSet
 from client.viewsets import KindClientViewSet, ClientViewSet, BusinessContactViewSet 
@@ -33,6 +37,7 @@ from rest_framework.routers import DefaultRouter
 #Router
 router = DefaultRouter()
 #Main Route
+router.register(r'User', UserViewSet)
 router.register(r'Country', CountryViewSet)
 router.register(r'City', CityViewSet)
 router.register(r'BDP', BDPViewSet)

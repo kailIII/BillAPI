@@ -1,8 +1,14 @@
 # serializers.py
 from main.models import catCity, catCountry, tblBDP, catMail, catPhone, catAddress, catWebsite, catHalls, catArea, catAppointment, catCategorySP, catCoin, tblCoinHistory
 from rest_framework import serializers
-
+from django.contrib.auth.models import User
  #Class
+
+class UserSerializer(serializers.ModelSerializer):
+   # snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Snippet.objects.all())
+    class Meta:
+        model = User
+        fields = ('id', 'username')
 
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
