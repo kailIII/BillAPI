@@ -82,7 +82,8 @@ class tblDocument(models.Model):
     update = models.DateField(auto_now = True, null = False, blank = False)
     
     def __str__(self):
-        return '%s - %s - %s - %s' %(self.idDocument, self.idEmploye, self.idMembership, self.documentType)
+        return '%s - %s - %s - %s' %(self.idDocument, self.idEmployee, self.idMembership, self.documentType)
+
 
 class tlbDocumentDetailCredict(base):
     idDocumentDetailCredict = models.AutoField(primary_key=True)

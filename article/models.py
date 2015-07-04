@@ -30,6 +30,7 @@ class catArticle(base):
     measureList = models.IntegerField(choices = M_LIST, default = 1, null = False, blank = False)
     measure = models.FloatField( null = True, blank = True)
     category = models.ManyToManyField(catCategorySP, through = 'tblCategoryArticle')
+    idDocument = models.ManyToManyField(tblDocument, through = 'tblArticleDocumentDetails')
 
     def __str__(self):
     	return '%s - %s' %(self.idModel, self.name)

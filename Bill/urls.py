@@ -23,10 +23,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 from main.viewsets import UserViewSet, CountryViewSet, CityViewSet, BDPViewSet, MailViewSet, AddressViewSet, PhoneViewSet, WebsiteViewSet, HallViewSet, AreaViewSet, AppointmentViewSet, CategorySPViewSet, CoinViewSet, CoinHistoryViewSet
+from company.viewsets import CompanyViewSet, CompanyHallsViewSet, EmployeeViewSet, EmployeeHistoryViewSet, MembershipViewSet, DocumentViewSet, DocumentDetailCredictViewSet 
 from article.viewsets import BrandViewSet, ModelViewSet, ArticleViewSet, BatchViewSet, PresentationViewSet, ArticlePresentationViewSet, CategoryArticleViewSet, ArticleHistoryPriceViewSet, ArticleInventoryViewSet, CompanyArticleViewSet, ProviderArticleViewSet, ArticleDocumentDetailViewSet
 from bank.viewsets import BankViewSet, BankControlViewSet, BankControlDetailViewSet, BankControlAdjustViewSet
 from client.viewsets import KindClientViewSet, ClientViewSet, BusinessContactViewSet 
-from company.viewsets import CompanyViewSet, CompanyHallsViewSet, EmployeeViewSet, EmployeeHistoryViewSet, MembershipViewSet, DocumentViewSet, DocumentDetailCredictViewSet 
 from order.viewsets import OrderViewSet
 from provider.viewsets import ProviderViewSet, ProviderHallsViewSet
 from purchase.viewsets import PurchaseViewSet
@@ -51,6 +51,14 @@ router.register(r'Appointment', AppointmentViewSet)
 router.register(r'CategorySP', CategorySPViewSet)
 router.register(r'Coin', CoinViewSet)
 router.register(r'CoinHistory', CoinHistoryViewSet)
+#Company Route
+router.register(r'Company', CompanyViewSet)
+router.register(r'CompanyHalls', CompanyHallsViewSet)
+router.register(r'Employee', EmployeeViewSet)
+router.register(r'EmployeeHistory', EmployeeHistoryViewSet)
+router.register(r'Membership', MembershipViewSet)
+router.register(r'Document', DocumentViewSet)
+router.register(r'DocumentDetailCredict', DocumentDetailCredictViewSet)
 #Article Route
 router.register(r'Brand', BrandViewSet)
 router.register(r'Model', ModelViewSet)
@@ -73,14 +81,6 @@ router.register(r'BankControlAdjust', BankControlAdjustViewSet)
 router.register(r'KindClient', KindClientViewSet)
 router.register(r'Client', ClientViewSet)
 router.register(r'BusinessContact', BusinessContactViewSet)
-#Company Route
-router.register(r'Company', CompanyViewSet)
-router.register(r'CompanyHalls', CompanyHallsViewSet)
-router.register(r'Employee', EmployeeViewSet)
-router.register(r'EmployeeHistory', EmployeeHistoryViewSet)
-router.register(r'Membership', MembershipViewSet)
-router.register(r'Document', DocumentViewSet)
-router.register(r'DocumentDetailCredict', DocumentDetailCredictViewSet)
 #Order Route
 router.register(r'Order', OrderViewSet)
 #Provider Route
